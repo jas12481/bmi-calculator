@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import FeettoCM from './Components/FeettoCM/FeettoCM';
+import Calculator from './Components/Calculator/Calculator';
+
 
 function App() {
+  const [cmvalue, setCMvalue] = useState("");
+  const feettochchange = (feettocmval) => {
+    setCMvalue(feettocmval);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FeettoCM onFeetChange={feettochchange} />
+      <hr className='my-3 flex' />
+      <Calculator data={cmvalue} />
     </div>
   );
 }
