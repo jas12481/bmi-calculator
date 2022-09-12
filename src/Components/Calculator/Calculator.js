@@ -19,12 +19,11 @@ function Calculator({ data }) {
   }
 
   useEffect(() => {
-    if (data !== '') {
-      setHeight(data);
-    } else {
+    if (cmvalue !== '') {
       setHeight(cmvalue);
+    } else {
+      setHeight(data);
     }
-
     let val = ([weight / height / height] * 10000).toFixed(1);
 
     setBMI(val);
@@ -35,8 +34,10 @@ function Calculator({ data }) {
       setInfo("Healthy");
     } else if (val > 24.9 && val < 30) {
       setInfo("Overweight");
-    } else {
+    } else if (val > 30) {
       setInfo("Obese");
+    } else {
+      setInfo("");
     }
 
   }, [data, weight, height, cmvalue])
