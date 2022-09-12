@@ -13,4 +13,29 @@ body {
 
 input{
   color: rgb(0,0,0);
+  padding: 25px;
+  margin: 10px 0;
+}
+
+.calculator__result--info{
+  padding: 10px;
+  border-radius: 5px;
+  width: max-content;
+}
+
+.underweight{
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+
+.healthy{
+  background-color: rgb(101 163 13);
+}
+
+.overweight{
+  background-color: rgb(225 29 72);
+}
+
+.obese{
+  background-color: rgb(136 19 55);
 }
