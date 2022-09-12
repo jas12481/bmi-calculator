@@ -49,7 +49,7 @@ function Calculator({ data }) {
     <div className="calculator text-xl">
       <div className="calculator__height flex flex-col">
         <span className="calculator__height--enter">Enter Height(cm):</span>
-        {data ? data + `cm` : <input type="number" onChange={handleHeight} />}
+        {data ? <span className="my-5 text-2xl">{data} cm</span> : <input type="number" onChange={handleHeight} />}
         <span className="calculator__height--info break-normal">Need to find Height in CM? Just enter Height in Feet, in "Convert Feet to CM" calculator below</span>
       </div>
       <div className="calculator__weight mt-4 flex flex-col">
